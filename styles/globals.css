@@ -52,24 +52,4 @@ h6 {
   isolation: isolate;
 }
 
-main {
-  margin: auto;
-}
-
-.attribution {
-  font-size: 0.85rem;
-  text-align: center;
-}
-.attribution a {
-  color: #3e52a3;
-}
-
-.container {
-  height: 100vh;
-  padding: 0 8rem 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=globals.css.map */
