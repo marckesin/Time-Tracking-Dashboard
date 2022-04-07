@@ -85,7 +85,7 @@
 }
 .grid2 .card {
   background: url("../public/icon-work.svg") no-repeat, #ff8c66;
-  background-position: 9.5rem -0.5rem;
+  background-position: 90% -0.5rem;
   background-size: 3.85rem;
 }
 
@@ -94,7 +94,7 @@
 }
 .grid3 .card {
   background: url("../public/icon-play.svg") no-repeat, #56c2e6;
-  background-position: 9.5rem -0.5rem;
+  background-position: 90% -0.5rem;
   background-size: 3.85rem;
 }
 
@@ -103,7 +103,7 @@
 }
 .grid4 .card {
   background: url("../public/icon-study.svg") no-repeat, #ff5c7c;
-  background-position: 9.5rem -0.5rem;
+  background-position: 90% -0.5rem;
   background-size: 3.85rem;
 }
 
@@ -112,7 +112,7 @@
 }
 .grid5 .card {
   background: url("../public/icon-exercise.svg") no-repeat, #4acf81;
-  background-position: 9.5rem -0.5rem;
+  background-position: 90% -0.5rem;
   background-size: 3.85rem;
 }
 
@@ -121,7 +121,7 @@
 }
 .grid6 .card {
   background: url("../public/icon-social.svg") no-repeat, #7536d3;
-  background-position: 9.5rem -0.5rem;
+  background-position: 90% -0.5rem;
   background-size: 3.85rem;
 }
 
@@ -130,7 +130,7 @@
 }
 .grid7 .card {
   background: url("../public/icon-self-care.svg") no-repeat, #f1c65b;
-  background-position: 9.5rem -0.5rem;
+  background-position: 90% -0.5rem;
   background-size: 3.85rem;
 }
 
@@ -154,6 +154,7 @@
   display: block;
   margin-bottom: 0.85rem;
   cursor: pointer;
+  text-transform: capitalize;
 }
 .periods .color1 {
   color: white;
@@ -182,21 +183,64 @@
   margin-bottom: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 991px) {
   .card .bottom {
-    height: auto;
+    height: 75%;
   }
-  .card .bottom .down {
+
+  .container {
+    padding: 3rem;
+  }
+
+  .down {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .card .bottom .text1 {
-    margin-bottom: 0.5rem;
+
+  .grid {
+    grid-template-areas: "a-1 a-1" "a-2 a-3" "a-4 a-5" "a-6 a-7";
+    margin-bottom: 3rem;
+  }
+
+  .grid2,
+.grid3,
+.grid4,
+.grid5,
+.grid6,
+.grid7 {
+    height: 12rem;
+  }
+  .grid2 .card,
+.grid3 .card,
+.grid4 .card,
+.grid5 .card,
+.grid6 .card,
+.grid7 .card {
+    background-position: 90% -0.5rem;
+    background-size: 5.2rem;
+  }
+}
+@media (max-width: 600px) {
+  .cardMain .periods,
+.cardMain .top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .cardMain .periods .avatar,
+.cardMain .top .avatar {
+    margin-bottom: 0;
+  }
+  .cardMain .periods {
+    justify-content: space-between;
+  }
+  .cardMain .periods button {
+    margin-bottom: 0;
   }
 
   .container {
-    padding: 3rem 1rem;
+    padding: 5rem 1.25rem 1rem;
   }
 
   .grid {
@@ -218,8 +262,13 @@
 .grid5 .card,
 .grid6 .card,
 .grid7 .card {
-    background-position: 12.5rem -0.5rem;
+    background-position: 90% -0.5rem;
     background-size: 5.2rem;
+  }
+
+  .heading {
+    font-size: 1.3rem;
+    margin-bottom: 0;
   }
 
   .hours {
