@@ -1,29 +1,57 @@
 .attribution {
   font-size: 0.8rem;
   text-align: center;
+  color: #bdc1ff;
+}
+.attribution a {
+  color: #56c2e6;
 }
 
-.borderPadding {
-  padding: 1.5rem;
+.avatar {
+  margin-bottom: 2rem;
+}
+.avatar span {
+  border: 3px solid white !important;
+  border-radius: 50%;
+}
+
+.card {
   height: 100%;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.card .bottom {
   background-color: #171b3f;
+  border-radius: inherit;
+  padding: 1.5rem;
+  height: 82%;
   transition: all 0.2s ease-in;
 }
-.borderPadding:hover {
+.card .bottom:hover {
   cursor: pointer;
   background-color: #22275d;
 }
+.card .bottom .up {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.card .bottom .up p {
+  margin-bottom: 0;
+}
 
 .cardMain {
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   background-color: #171b3f;
 }
 .cardMain .bottom {
   padding: 1.5rem;
 }
 .cardMain .top {
-  padding: 1.5rem;
+  padding: 2rem 1.5rem 1.5rem;
   width: 100%;
   height: 80%;
   background-color: #5847eb;
@@ -43,8 +71,8 @@
   width: 100%;
   display: grid;
   grid-auto-columns: 1fr;
-  row-gap: 1.3rem;
-  column-gap: 1.3rem;
+  row-gap: 1.5rem;
+  column-gap: 1.5rem;
   grid-template-areas: "a-1 a-2 a-3 a-4" "a-1 a-5 a-6 a-7";
 }
 
@@ -55,25 +83,55 @@
 .grid2 {
   grid-area: a-2;
 }
+.grid2 .card {
+  background: url("../public/icon-work.svg") no-repeat, #ff8c66;
+  background-position: 9.5rem -0.5rem;
+  background-size: 3.85rem;
+}
 
 .grid3 {
   grid-area: a-3;
+}
+.grid3 .card {
+  background: url("../public/icon-play.svg") no-repeat, #56c2e6;
+  background-position: 9.5rem -0.5rem;
+  background-size: 3.85rem;
 }
 
 .grid4 {
   grid-area: a-4;
 }
+.grid4 .card {
+  background: url("../public/icon-study.svg") no-repeat, #ff5c7c;
+  background-position: 9.5rem -0.5rem;
+  background-size: 3.85rem;
+}
 
 .grid5 {
   grid-area: a-5;
+}
+.grid5 .card {
+  background: url("../public/icon-exercise.svg") no-repeat, #4acf81;
+  background-position: 9.5rem -0.5rem;
+  background-size: 3.85rem;
 }
 
 .grid6 {
   grid-area: a-6;
 }
+.grid6 .card {
+  background: url("../public/icon-social.svg") no-repeat, #7536d3;
+  background-position: 9.5rem -0.5rem;
+  background-size: 3.85rem;
+}
 
 .grid7 {
   grid-area: a-7;
+}
+.grid7 .card {
+  background: url("../public/icon-self-care.svg") no-repeat, #f1c65b;
+  background-position: 9.5rem -0.5rem;
+  background-size: 3.85rem;
 }
 
 .hours {
@@ -110,6 +168,8 @@
 .heading {
   color: white;
   font-weight: 300;
+  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
 }
 
 .text1 {
@@ -123,12 +183,47 @@
 }
 
 @media (max-width: 600px) {
+  .card .bottom {
+    height: auto;
+  }
+  .card .bottom .down {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card .bottom .text1 {
+    margin-bottom: 0.5rem;
+  }
+
   .container {
     padding: 3rem 1rem;
   }
 
   .grid {
     grid-template-areas: "a-1" "a-2" "a-3" "a-4" "a-5" "a-6" "a-7";
+    margin-bottom: 3rem;
+  }
+
+  .grid2,
+.grid3,
+.grid4,
+.grid5,
+.grid6,
+.grid7 {
+    height: 10rem;
+  }
+  .grid2 .card,
+.grid3 .card,
+.grid4 .card,
+.grid5 .card,
+.grid6 .card,
+.grid7 .card {
+    background-position: 12.5rem -0.5rem;
+    background-size: 5.2rem;
+  }
+
+  .hours {
+    font-size: 1.85rem;
   }
 }
 

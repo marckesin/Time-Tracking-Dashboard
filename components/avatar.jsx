@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 export default function Avatar() {
   return (
     <div className={styles.avatar}>
-      <Image src="/image-jeremy.png" alt="User image" width={75} height={75} />
+      <Image src="/image-jeremy.png" alt="User image" width={65} height={65} />
     </div>
   );
 }

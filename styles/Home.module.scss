@@ -1,25 +1,68 @@
 @use "variables";
 
+@mixin card-layout($grid, $image, $color) {
+  grid-area: $grid;
+
+  .card {
+    background: url($image) no-repeat, $color;
+    background-position: 9.5rem -0.5rem;
+    background-size: 3.85rem;
+  }
+}
+
 .attribution {
   font-size: 0.8rem;
   text-align: center;
+  color: variables.$pale-blue;
+
+  a {
+    color: variables.$soft-blue;
+  }
 }
 
-.borderPadding {
-  padding: 1.5rem;
-  height: 100%;
-  border-radius: 0.5rem;
-  background-color: variables.$dark-blue;
-  transition: all 0.2s ease-in;
+.avatar {
+  margin-bottom: 2rem;
 
-  &:hover {
-    cursor: pointer;
-    background-color: variables.$dark-blue-hover;
+  span {
+    border: 3px solid variables.$white !important;
+    border-radius: 50%;
+  }
+}
+
+.card {
+  height: 100%;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  .bottom {
+    background-color: variables.$dark-blue;
+    border-radius: inherit;
+    padding: 1.5rem;
+    height: 82%;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      cursor: pointer;
+      background-color: variables.$dark-blue-hover;
+    }
+
+    .up {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
 .cardMain {
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   background-color: variables.$dark-blue;
 
   .bottom {
@@ -27,7 +70,7 @@
   }
 
   .top {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem 1.5rem;
     width: 100%;
     height: 80%;
     background-color: variables.$blue;
@@ -48,8 +91,8 @@
   width: 100%;
   display: grid;
   grid-auto-columns: 1fr;
-  row-gap: 1.3rem;
-  column-gap: 1.3rem;
+  row-gap: 1.5rem;
+  column-gap: 1.5rem;
   grid-template-areas:
     "a-1 a-2 a-3 a-4"
     "a-1 a-5 a-6 a-7";
@@ -59,22 +102,30 @@
   grid-area: a-1;
 }
 .grid2 {
-  grid-area: a-2;
+  @include card-layout(a-2, "../public/icon-work.svg", variables.$light-orange);
 }
 .grid3 {
-  grid-area: a-3;
+  @include card-layout(a-3, "../public/icon-play.svg", variables.$soft-blue);
 }
 .grid4 {
-  grid-area: a-4;
+  @include card-layout(a-4, "../public/icon-study.svg", variables.$light-red);
 }
 .grid5 {
-  grid-area: a-5;
+  @include card-layout(
+    a-5,
+    "../public/icon-exercise.svg",
+    variables.$lime-green
+  );
 }
 .grid6 {
-  grid-area: a-6;
+  @include card-layout(a-6, "../public/icon-social.svg", variables.$violet);
 }
 .grid7 {
-  grid-area: a-7;
+  @include card-layout(
+    a-7,
+    "../public/icon-self-care.svg",
+    variables.$soft-orange
+  );
 }
 
 .hours {
@@ -115,6 +166,8 @@
 .heading {
   color: variables.$white;
   font-weight: 300;
+  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
 }
 
 .text1 {
@@ -128,11 +181,46 @@
 }
 
 @media (max-width: 600px) {
+  .card {
+    .bottom {
+      height: auto;
+
+      .down {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .text1 {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
   .container {
     padding: 3rem 1rem;
   }
 
   .grid {
     grid-template-areas: "a-1" "a-2" "a-3" "a-4" "a-5" "a-6" "a-7";
+    margin-bottom: 3rem;
+  }
+
+  .grid2,
+  .grid3,
+  .grid4,
+  .grid5,
+  .grid6,
+  .grid7 {
+    height: 10rem;
+
+    .card {
+      background-position: 12.5rem -0.5rem;
+      background-size: 5.2rem;
+    }
+  }
+
+  .hours {
+    font-size: 1.85rem;
   }
 }

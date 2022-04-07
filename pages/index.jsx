@@ -13,6 +13,7 @@ export default function Home() {
   const grids = ["grid2", "grid3", "grid4", "grid5", "grid6", "grid7"];
   const [work, play, study, exercise, social, selfCare] = data;
 
+  // Function to handle clicks on periods
   function handleClick(event) {
     setPeriod(event.target.value);
   }
