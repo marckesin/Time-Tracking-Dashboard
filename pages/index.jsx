@@ -4,12 +4,18 @@ import Card from "../components/card";
 import Head from "next/head";
 import data from "../data.json";
 import styles from "../styles/Home.module.css";
+import { useState } from "react";
 
 // Home component to render the landing page
 export default function Home() {
+  const [period, setPeriod] = useState("daily");
+  const periods = ["daily", "weekly", "monthly"];
+  const grids = ["grid2", "grid3", "grid4", "grid5", "grid6", "grid7"];
   const [work, play, study, exercise, social, selfCare] = data;
 
-  console.log(work);
+  function handleClick(event) {
+    setPeriod(event.target.value);
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -24,34 +30,71 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.grid}>
           <div className={styles.grid1}>
-            <div className={styles.borderPadding}>
-              <Avatar />
-              <p className={styles.text2}>Report for</p>
-              <h1>Jeremy Robson</h1>
-              <ul className={styles.list}>
-                <li>Daily</li>
-                <li>Weekly</li>
-                <li>Monthly</li>
-              </ul>
+            <div className={styles.cardMain}>
+              <div className={styles.top}>
+                <Avatar />
+                <p className={styles.text2}>Report for</p>
+                <h1 className={styles.heading}>Jeremy Robson</h1>
+              </div>
+              <div className={styles.bottom}>
+                <div className={styles.periods}>
+                  {periods.map((item, index) => (
+                    <button
+                      key={index}
+                      className={
+                        period === item ? styles.color1 : styles.color2
+                      }
+                      value={item}
+                      onClick={handleClick}
+                    >
+                      {item}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
           <div className={styles.grid2}>
-            <Card hours={32} text1={data[0].title} text2={36} />
+            <Card
+              hours={work.timeframes[period].current}
+              text1={work.title}
+              text2={work.timeframes[period].previous}
+            />
           </div>
           <div className={styles.grid3}>
-            <Card hours={32} text1={data[1].title} text2={36} />
+            <Card
+              hours={play.timeframes[period].current}
+              text1={play.title}
+              text2={play.timeframes[period].previous}
+            />
           </div>
           <div className={styles.grid4}>
-            <Card hours={32} text1={"Work"} text2={36} />
+            <Card
+              hours={study.timeframes[period].current}
+              text1={study.title}
+              text2={study.timeframes[period].previous}
+            />
           </div>
           <div className={styles.grid5}>
-            <Card hours={32} text1={"Work"} text2={36} />
+            <Card
+              hours={exercise.timeframes[period].current}
+              text1={exercise.title}
+              text2={exercise.timeframes[period].previous}
+            />
           </div>
           <div className={styles.grid6}>
-            <Card hours={32} text1={"Work"} text2={36} />
+            <Card
+              hours={social.timeframes[period].current}
+              text1={social.title}
+              text2={social.timeframes[period].previous}
+            />
           </div>
           <div className={styles.grid7}>
-            <Card hours={32} text1={"Work"} text2={36} />
+            <Card
+              hours={selfCare.timeframes[period].current}
+              text1={selfCare.title}
+              text2={selfCare.timeframes[period].previous}
+            />
           </div>
         </div>
       </main>
