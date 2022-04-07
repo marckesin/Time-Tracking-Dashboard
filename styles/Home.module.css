@@ -4,23 +4,47 @@
 }
 
 .borderPadding {
-  padding: 1rem;
+  padding: 1.5rem;
+  height: 100%;
+  border-radius: 0.5rem;
+  background-color: #171b3f;
+  transition: all 0.2s ease-in;
+}
+.borderPadding:hover {
+  cursor: pointer;
+  background-color: #22275d;
+}
+
+.cardMain {
+  border-radius: 0.5rem;
+  background-color: #171b3f;
+}
+.cardMain .bottom {
+  padding: 1.5rem;
+}
+.cardMain .top {
+  padding: 1.5rem;
+  width: 100%;
+  height: 80%;
+  background-color: #5847eb;
+  border-radius: inherit;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 8rem 0.5rem;
+  padding: 0 10rem 0.5rem;
   min-height: 100vh;
+  background-color: #0f1424;
 }
 
 .grid {
   width: 100%;
   display: grid;
   grid-auto-columns: 1fr;
-  row-gap: 1rem;
-  column-gap: 1rem;
+  row-gap: 1.3rem;
+  column-gap: 1.3rem;
   grid-template-areas: "a-1 a-2 a-3 a-4" "a-1 a-5 a-6 a-7";
 }
 
@@ -55,16 +79,7 @@
 .hours {
   font-size: 3rem;
   font-weight: 300;
-}
-
-.list {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-}
-.list li {
-  list-style: none;
+  color: white;
 }
 
 .main {
@@ -72,8 +87,39 @@
   width: 100%;
 }
 
+.periods {
+  padding: 0;
+  margin: 0;
+}
+.periods button {
+  all: unset;
+  display: block;
+  margin-bottom: 0.85rem;
+  cursor: pointer;
+}
+.periods .color1 {
+  color: white;
+}
+.periods .color2 {
+  color: #6f76c8;
+}
+.periods .color2:hover {
+  color: white;
+}
+
+.heading {
+  color: white;
+  font-weight: 300;
+}
+
+.text1 {
+  color: white;
+}
+
 .text2 {
   font-size: 0.8rem;
+  color: #bdc1ff;
+  margin-bottom: 0;
 }
 
 @media (max-width: 600px) {
