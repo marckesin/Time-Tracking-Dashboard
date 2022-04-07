@@ -1,6 +1,6 @@
 import Avatar from "../components/avatar";
-import Footer from "../components/footer";
 import Card from "../components/card";
+import Footer from "../components/footer";
 import Head from "next/head";
 import data from "../data.json";
 import styles from "../styles/Home.module.css";
@@ -10,7 +10,6 @@ import { useState } from "react";
 export default function Home() {
   const [period, setPeriod] = useState("daily");
   const periods = ["daily", "weekly", "monthly"];
-  const grids = ["grid2", "grid3", "grid4", "grid5", "grid6", "grid7"];
   const [work, play, study, exercise, social, selfCare] = data;
 
   // Function to handle clicks on periods
@@ -34,8 +33,10 @@ export default function Home() {
             <div className={styles.cardMain}>
               <div className={styles.top}>
                 <Avatar />
-                <p className={styles.text2}>Report for</p>
-                <h1 className={styles.heading}>Jeremy Robson</h1>
+                <div>
+                  <p className={styles.text2}>Report for</p>
+                  <h1 className={styles.heading}>Jeremy Robson</h1>
+                </div>
               </div>
               <div className={styles.bottom}>
                 <div className={styles.periods}>

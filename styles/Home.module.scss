@@ -5,7 +5,7 @@
 
   .card {
     background: url($image) no-repeat, $color;
-    background-position: 9.5rem -0.5rem;
+    background-position: 90% -0.5rem;
     background-size: 3.85rem;
   }
 }
@@ -148,6 +148,7 @@
     display: block;
     margin-bottom: 0.85rem;
     cursor: pointer;
+    text-transform: capitalize;
   }
 
   .color1 {
@@ -180,25 +181,67 @@
   margin-bottom: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 991px) {
   .card {
     .bottom {
-      height: auto;
+      height: 75%;
+    }
+  }
 
-      .down {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  .container {
+    padding: 3rem;
+  }
+
+  .down {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .grid {
+    grid-template-areas: "a-1 a-1" "a-2 a-3" "a-4 a-5" "a-6 a-7";
+    margin-bottom: 3rem;
+  }
+
+  .grid2,
+  .grid3,
+  .grid4,
+  .grid5,
+  .grid6,
+  .grid7 {
+    height: 12rem;
+
+    .card {
+      background-position: 90% -0.5rem;
+      background-size: 5.2rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .cardMain {
+    .periods,
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .avatar {
+        margin-bottom: 0;
       }
+    }
 
-      .text1 {
-        margin-bottom: 0.5rem;
+    .periods {
+      justify-content: space-between;
+
+      button {
+        margin-bottom: 0;
       }
     }
   }
 
   .container {
-    padding: 3rem 1rem;
+    padding: 5rem 1.25rem 1rem;
   }
 
   .grid {
@@ -215,9 +258,14 @@
     height: 10rem;
 
     .card {
-      background-position: 12.5rem -0.5rem;
+      background-position: 90% -0.5rem;
       background-size: 5.2rem;
     }
+  }
+
+  .heading {
+    font-size: 1.3rem;
+    margin-bottom: 0;
   }
 
   .hours {
